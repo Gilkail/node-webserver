@@ -2,6 +2,8 @@ const express = require('express') // Request express
 const hbs = require('hbs') // Require handle bars
 const fs = require('fs')
 
+const port = process.env.PORT || 3000
+
 const app = express() // Initiate the server
 
 hbs.registerPartials(__dirname+'/views/partials') // Calling partials
@@ -57,6 +59,6 @@ app.get('/bad', (req, res) => {
     })
 })
 
-app.listen(3000, ()=> {
+app.listen(port, ()=> {
     console.log('Server is up on port 3000') // Show a message when server is up
 }) // Listen to port 3000
